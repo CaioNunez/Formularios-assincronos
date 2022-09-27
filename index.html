@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+  <link rel="stylesheet" href="styles/index.css" />
+</head>
+<body>
+  <!-- 
+    Exercício
+    Construir um formulário para cadastrar clientes no sistema
+    Esse formulário, precisa conter os seguintes campos:
+    - Nome completo
+    - Email
+    - Confirmação do email
+    - Senha
+    - CEP
+    - Data de nascimento
+
+    Algumas validações são necessárias
+    1 - Email e Confirmação do Email precisam ser iguais
+    2 - Senha tem que ter no mínimo 12 caracteres e 1 Caracter maíusculo
+    3 - Data de nascimento precisa estar no formato DD/MM/YYYY
+
+    Validação da senha vai ser realizada enquanto o usuário digita
+    Validação do email e da data, será realiza quando o usuário clica em Cadastrar
+
+    Se a validação falhar (1, 2 ou 3 estiverem com ERRO), o formulário não poderá ser enviado
+   -->
+  <div class="styled-input">
+    <!-- Label -->
+    <label>Password</label>
+    <!-- Input + Status da validação -->
+    <div>
+      <input 
+        id="form-password" 
+        type="password" 
+        placeholder="Minimum 12 characteres" 
+      />
+      <span id="password-status"></span>
+    </div>
+    <!-- Cor da validação -->
+    <div id="password-color"></div>
+  </div>
+
+  <script src="javascript/index.js"></script>
+</body>
+</html>
