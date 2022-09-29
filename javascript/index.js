@@ -38,3 +38,25 @@ passwordInput.addEventListener("input", (event) => {
     return;
   }
 });
+
+const inputCep = document.getElementById("cep");
+const inputStreet = document.getElementById("street");
+const inputNeighborhood = document.getElementById("neighborhood");
+const inputCity = document.getElementById("city");
+const inputState = document.getElementById("state");
+
+inputCep.addEventListener("blur", (event) => {
+  const cep = event.target.value;
+
+  fetch(`https://brasilapi.com.br/api/cep/v2/${cep}`)
+    .then((response) => response.json())
+    .then((data) => {
+      inputStreet.value = data.street;
+      inputNeighborhood.value = data.neighborhood;
+      inputCity.value = data.city;
+      inputState.value = data.state;
+      console.log("Recebi os dados de CEP");
+    });
+
+  console.log("Oi");
+});
